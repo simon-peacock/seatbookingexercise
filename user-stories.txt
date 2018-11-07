@@ -1,0 +1,27 @@
+State 1
+
+As a user
+Given I update a ticket amount
+I want to see the total update
+
+As a user
+Given I clikc confirm
+I want to be taken to step 2
+
+State 2
+
+As a user
+Given I have not selected all my seats
+I expect to see a disabled next step button
+
+As a user
+Given I click on a seat
+I expect the seat to appear highlighted
+
+As a user
+Given I click on a selected seat
+I expect the seat to not appear highlighted
+
+As a user
+Given I have selected all of the seats I intend to purchase
+I expect no more seats to be selectable
