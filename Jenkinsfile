@@ -8,7 +8,7 @@ pipeline {
         stage('Unit Test') {
            steps {
                 sh '''
-                    yarn && yarn test
+                    yarn && yarn test 
                 '''
            }
         }
