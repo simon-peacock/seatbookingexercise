@@ -8,8 +8,18 @@ pipeline {
         stage('Unit Test') {
            steps {
                 sh '''
-                    yarn && yarn test 
+                    yarn && yarn test
                 '''
+           }
+        }
+        stage('Static Code Analysis') {
+           when {
+               expression { branch "PR-*" }
+           }
+           steps {
+               withSonarQubeEnv('lighting-prototype') {
+                   sh "sonar-scanner "
+               }
            }
         }
     }
